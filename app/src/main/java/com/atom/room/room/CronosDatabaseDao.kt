@@ -11,21 +11,19 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface CronosDatabaseDao{
-    @Query(value = "SELECT * FROM cronos")
+    @Query("SELECT * FROM cronos")
     fun getCronos(): Flow<List<Cronos>>
 
-    @Query(value = "SELECT * FROM cronos WHERE id= :id")
-    fun getCronosbyId(id:Long): Flow<Cronos>
+    @Query("SELECT * FROM cronos WHERE id= :id")
+    fun getCronosById(id:Long): Flow<Cronos>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(crono: Cronos)
+    suspend fun insert(crono:Cronos)
 
     @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun update(crono: Cronos)
+    suspend fun update (crono:Cronos)
 
     @Delete
-    suspend fun delete(crono: Cronos)
+    suspend fun delete(crono:Cronos)
 
-
-    
 }

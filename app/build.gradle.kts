@@ -67,6 +67,10 @@ dependencies {
     // Navigation
     implementation(libs.androidx.navigation.compose)
 
+
     // Swipe
     implementation(libs.swipe)
+
+
+    implementation(libs.androidx.material.icons.extended)
 }
